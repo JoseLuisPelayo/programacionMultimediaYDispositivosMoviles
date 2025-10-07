@@ -1,5 +1,7 @@
 package com.example.programacionmultimediaydispositivosmoviles.t02_introduccion_a_kotlin.ejemplos_teoria
 
+import java.util.*
+
 fun main() {
     //Los comentarios son como en java // para linea /* para bloque
 
@@ -164,10 +166,76 @@ fun main() {
     val factorSuerte = 0.2
     val bonus = 0.3
     when (val damage: Double = factorSuerte + bonus) {
-        in 0.0..0.3 -> print("Daño recibido:${damage * 10}")
-        in 0.3..0.6 -> print("Daño recibido:${damage * 20}")
-        in 0.6..1.0 -> print("Daño recibido:${damage * 30}")
+        in 0.0..0.3 -> println("Daño recibido:${damage * 10}")
+        in 0.3..0.6 -> println("Daño recibido:${damage * 20}")
+        in 0.6..1.0 -> println("Daño recibido:${damage * 30}")
     }
 
+    //Casi todo en kotlin tiene un valor aunque sea Unit
+    val isUnit = println("valor del print");
+    println(isUnit);
+
+    val celsius = 10;
+    val isHot = if (celsius > 50) true else false;
+    println(isHot);
+
+    println("La temperatura del agua es ${ if (celsius > 50) "muy caliente" else "OK" }");
+
+
+    // Funciones
+    fun randomDay(): String {
+        val week = arrayOf("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
+        return week[Random().nextInt(week.size)]
+    }
+
+    fun fishFood(day: String): String {
+        var food = "";
+
+        food = when (day) {
+            "Lunes" -> "cereales"
+            "Martes" -> "pellets"
+            "Miércoles" -> "gusanos rojos"
+            "Jueves" -> "granos"
+            "Viernes" -> "mosquitos"
+            "Sábado" -> "lechuga"
+            "Domingo" -> "plankton"
+            else -> "Día erroneo"
+        }
+
+            return food;
+        }
+
+    //Funciones compactas
+//    fun shouldChangeWater(day: String, temp: Int = 22, dirty: Int = 20): Boolean {
+//        return when {
+//            temp > 30 -> true;
+//            dirty > 30 -> true;
+//            day == "Domingo" -> true;
+//            else -> false
+//        }
+//    }
+
+    fun isTooHot(temp: Int): Boolean = temp > 30;
+    fun isTooDirty(dirty: Int): Boolean = dirty > 30;
+    fun isSunday(day: String): Boolean = day == "Domingo";
+
+    fun shouldChangeWater(day: String, temp: Int = 22, dirty: Int = 20): Boolean {
+        return when {
+            isTooHot(temp) -> true;
+            isTooDirty(dirty) -> true;
+            isSunday(day) -> true;
+            else -> false
+        }
+    }
+
+        fun feedTheFish(): Unit {
+        val day = randomDay();
+        val food =fishFood(day)
+
+        println("Hoy es $day y el pez come $food");
+        println("Cambiar el agua: ${shouldChangeWater(day)}");
+    }
+
+    feedTheFish();
 
 }
