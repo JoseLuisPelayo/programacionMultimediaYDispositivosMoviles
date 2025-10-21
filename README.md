@@ -10,4 +10,4 @@
 ## Introducción al desarrollo de aplicaciones moviles
 - [Teoría](app/src/main/java/com/example/programacionmultimediaydispositivosmoviles/t03_programacion_aplicaciones_para_dispositivos_moviles/teoria)
 - [Ejemplos clase](app/src/main/java/com/example/programacionmultimediaydispositivosmoviles/t03_programacion_aplicaciones_para_dispositivos_moviles/ejemplos_clase/README.md)
- 
+- [Entrenamientos](app/src/main/java/com/example/programacionmultimediaydispositivosmoviles/t03_programacion_aplicaciones_para_dispositivos_moviles/entrenamientos)
